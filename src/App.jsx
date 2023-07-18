@@ -46,6 +46,8 @@ const App = () => {
       return;
     }
 
+    // Dynamically setting the date for use in the api link. It is set to be -1 the current date, because the police data is two months behind
+    // using console log to check that the Date method works
     const now = new Date();
     console.log("hello", now.getFullYear());
 
@@ -60,6 +62,7 @@ const App = () => {
     }
   };
 
+  // Setting geolocation
   const onInput = async (e) => {
     try {
       const { data } = await axios.get(
@@ -85,6 +88,7 @@ const App = () => {
   // let antiSocial = 0;
   // let shoplifting = 0;
 
+  // Aggregating the crime data.  Shows the categories and how many occured in each category in the data.
   const totals = {};
   policeData.forEach((crime) => {
     totals[crime.category] = totals[crime.category]
@@ -96,9 +100,11 @@ const App = () => {
   return (
     <>
       <input onInput={onInput} type="text" />
+      {/* // showing how many instances are in the data by mapping over the data and returning a value */}
       <p>{policeData && policeData.length}</p>
       {totalsAsArray.map((total) => {
         return (
+          // totals component
           <p>
             {total[0]}: {total[1]}
           </p>
@@ -106,15 +112,16 @@ const App = () => {
       })}
       {/* <p>Anti social total: {antiSocial}</p>
       <p>Shoplifting total: {shoplifting}</p> */}
+
       {policeData &&
         policeData.map((crime) => {
+          // can live in a component crime
           return (
             <div className="crime">
               <p>category: {crime.category}</p>
               <p>location type: {crime.location_type}</p>
               {crime.context && <p>context: {crime.context}</p>}
               <p>location: {crime.location.street.name}</p>
-              {/* why is the below not showing? */}
               {/* // if truthy the access */}
               {crime.outcome_status && (
                 <p>outcome: {crime.outcome_status.category}</p>
