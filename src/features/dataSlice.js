@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   data: "",
+  crimes: [],
 };
 
 export const dataSlice = createSlice({
