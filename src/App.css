@@ -1,4 +1,10 @@
 .crime {
   margin: 20px;
-  background-color: grey;
+  background-color: #e7f2ff;
+  color: black;
+}
+
+body {
+  background-color: #003270;
+  color: antiquewhite;
 }
