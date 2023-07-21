@@ -3,7 +3,7 @@ import Total from "./Total";
 
 const Totals = (props) => {
   return (
-    <>
+    <div className="crimeTotals">
       <p>{props.policeData && props.policeData.length}</p>
       {props.totalsAsArray.map((total) => {
         return (
@@ -11,7 +11,7 @@ const Totals = (props) => {
           <Total total={total} />
         );
       })}
-    </>
+    </div>
   );
 };
 

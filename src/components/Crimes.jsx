@@ -3,11 +3,13 @@ import Crime from "./Crime";
 
 const Crimes = (props) => {
   return (
-    props.policeData &&
-    props.policeData.map((crime) => {
-      // can live in a component crime
-      return <Crime crime={crime} />;
-    })
+    <div className="crimes">
+      {props.policeData &&
+        props.policeData.map((crime) => {
+          // can live in a component crime
+          return <Crime crime={crime} />;
+        })}
+    </div>
   );
 };
 

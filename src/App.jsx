@@ -11,6 +11,8 @@ import "./App.css";
 import Crimes from "./components/Crimes";
 import Totals from "./components/Totals";
 import Loading from "./components/Loading";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -60,6 +62,7 @@ const App = () => {
 
     try {
       const { data } = await axios.get(dataLink);
+
       dispatch(setPoliceData(data));
     } catch (error) {}
   };
@@ -71,6 +74,7 @@ const App = () => {
       const { data } = await axios.get(
         `http://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=1&appid=17a3e02a9cc47ed1eac90bc2f9c0012a`
       );
+      console.log(data);
       setLoading(false);
 
       if (data.length == 0) {
@@ -97,18 +101,24 @@ const App = () => {
   const totalsAsArray = Object.entries(totals);
 
   return (
-    <>
+    <div className="crimeApp">
+      <Header />
       {loading && <Loading />}
       <input onInput={onInput} type="text" />
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
 
-      <Totals totalsAsArray={totalsAsArray} policeData={policeData} />
-      <Crimes policeData={policeData} />
+      {policeData.length > 0 && (
+        <>
+          <Totals totalsAsArray={totalsAsArray} policeData={policeData} />
+          <Crimes policeData={policeData} />{" "}
+        </>
+      )}
 
       {/* <p>Anti social total: {antiSocial}</p>
       <p>Shoplifting total: {shoplifting}</p> */}
-    </>
+      <Footer />
+    </div>
   );
 };
 
