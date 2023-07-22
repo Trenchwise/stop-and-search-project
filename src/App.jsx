@@ -13,6 +13,7 @@ import Totals from "./components/Totals";
 import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Intro from "./components/Intro";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -103,8 +104,9 @@ const App = () => {
   return (
     <div className="crimeApp">
       <Header />
+      <Intro />
       {loading && <Loading />}
-      <input onInput={onInput} type="text" />
+      <input onInput={onInput} type="text" placeholder="Enter your area here" />
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
 

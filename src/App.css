@@ -4,12 +4,22 @@
 }
 
 body {
-  background-color: #003270;
-  color: antiquewhite;
+  background-color: white;
+  /* color: antiquewhite; */
 }
 
 .crimeApp {
   margin: 20px;
+}
+
+header {
+  background-color: #003270;
+  color: #fcfcfd;
+  width: 100%;
+  height: 100px;
+  position: relative;
+  top: -22px;
+  text-align: center;
 }
 
 .lds-roller {
