@@ -106,7 +106,12 @@ const App = () => {
       <Header />
       <Intro />
       {loading && <Loading />}
-      <input onInput={onInput} type="text" placeholder="Enter your area here" />
+      <input
+        onInput={onInput}
+        type="text"
+        placeholder="Enter your area here"
+        id="inputBox"
+      />
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
 
