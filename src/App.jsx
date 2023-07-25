@@ -15,7 +15,9 @@ import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
-import TotalsPieChart from "./components/TotalsPieChart";
+import Stop from "./components/Stop";
+import Stops from "./components/Stops";
+// import TotalsPieChart from "./components/TotalsPieChart";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -42,15 +44,20 @@ const App = () => {
 
   useEffect(() => {
     getPoliceData();
-  }, [coords]); // everytime coords change to get location
+  }, [coords]); // everytime coords change to get location for search by area
+
+  useEffect(() => {
+    getStopData();
+  }, []); // everytime coords change to get location for stop and search
 
   useEffect(() => {
     getLocation();
   }, []);
 
   // Stop and search api link
+  // Is working and display data in the store. but lat and long not set.
   const getStopData = async () => {
-    const dataLink = `https://data.police.uk/api/stops-street?poly=52.2,0.5:52.8,0.2:52.1,0.88&date=2023-05`;
+    const dataLink = `https://data.police.uk/api/stops-street?lat=52.629729&lng=-1.131592&date=2023-05`;
     try {
       const { data } = await axios.get(dataLink);
 
@@ -138,9 +145,8 @@ const App = () => {
           <Crimes policeData={policeData} />{" "}
         </>
       )}
-
-      {/* <p>Anti social total: {antiSocial}</p>
-      <p>Shoplifting total: {shoplifting}</p> */}
+      <Stops />
+      <Stop />
       <Footer />
     </div>
   );
