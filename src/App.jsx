@@ -6,6 +6,7 @@ import {
   selectPoliceData,
   setCoords,
   setPoliceData,
+  setStopData,
 } from "./features/dataSlice";
 import "./App.css";
 import Crimes from "./components/Crimes";
@@ -41,11 +42,21 @@ const App = () => {
 
   useEffect(() => {
     getPoliceData();
-  }, [coords]); // everytime coords change get location
+  }, [coords]); // everytime coords change to get location
 
   useEffect(() => {
     getLocation();
   }, []);
+
+  // Stop and search api link
+  const getStopData = async () => {
+    const dataLink = `https://data.police.uk/api/stops-street?poly=52.2,0.5:52.8,0.2:52.1,0.88&date=2023-05`;
+    try {
+      const { data } = await axios.get(dataLink);
+
+      dispatch(setStopData(data));
+    } catch (error) {}
+  };
 
   // The function that gets the data
   const getPoliceData = async () => {
@@ -53,7 +64,6 @@ const App = () => {
     if (!coords) {
       return;
     }
-
     // Dynamically setting the date for use in the api link. It is set to be -1 the current date, because the police data is two months behind
     // using console log to check that the Date method works
     const now = new Date();
@@ -116,7 +126,7 @@ const App = () => {
             id="inputBox"
           />
         </div>
-        <TotalsPieChart />
+        {/* <TotalsPieChart /> */}
       </div>
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
@@ -124,9 +134,7 @@ const App = () => {
       {policeData.length > 0 && (
         <>
           <Totals totalsAsArray={totalsAsArray} policeData={policeData} />
-          <div id="pieChartWrapper">
-            <TotalsPieChart />
-          </div>
+          <div id="pieChartWrapper">{/* <TotalsPieChart /> */}</div>
           <Crimes policeData={policeData} />{" "}
         </>
       )}
