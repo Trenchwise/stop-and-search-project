@@ -145,8 +145,8 @@ const App = () => {
           <Crimes policeData={policeData} />{" "}
         </>
       )}
-      <Stops />
-      <Stop />
+      {/* <Stops />
+      <Stop /> */}
       <Footer />
     </div>
   );
