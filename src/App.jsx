@@ -14,6 +14,7 @@ import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
+import TotalsPieChart from "./components/TotalsPieChart";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -102,22 +103,30 @@ const App = () => {
   const totalsAsArray = Object.entries(totals);
 
   return (
-    <div className="crimeApp">
-      <Header />
-      <Intro />
-      {loading && <Loading />}
-      <input
-        onInput={onInput}
-        type="text"
-        placeholder="Enter your area here"
-        id="inputBox"
-      />
+    <div id="pageContainer">
+      <div className="crimeApp">
+        <Header />
+        <Intro />
+        {loading && <Loading />}
+        <div id="inputBoxWrapper">
+          <input
+            onInput={onInput}
+            type="text"
+            placeholder="Enter your area here"
+            id="inputBox"
+          />
+        </div>
+        <TotalsPieChart />
+      </div>
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
 
       {policeData.length > 0 && (
         <>
           <Totals totalsAsArray={totalsAsArray} policeData={policeData} />
+          <div id="pieChartWrapper">
+            <TotalsPieChart />
+          </div>
           <Crimes policeData={policeData} />{" "}
         </>
       )}

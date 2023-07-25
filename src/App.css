@@ -1,14 +1,20 @@
 body {
   background-color: white;
-  margin: 0;
+
   /* color: antiquewhite; */
 }
 
+#pageContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
 .crimeApp {
-  margin: 20px;
+  position: relative;
 }
 
 .headerWrapper {
+  /* width: max-content; */
   display: flex;
   background-color: #003270;
   flex-direction: row;
@@ -79,10 +85,19 @@ body {
 
 #inputBoxWrapper {
   display: flex;
+  justify-content: center;
 }
 
 #inputBox {
+  display: flex;
   border-radius: 5px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 .lds-roller {
   display: inline-block;
