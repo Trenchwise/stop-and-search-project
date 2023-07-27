@@ -19,6 +19,7 @@ import Intro from "./components/Intro";
 // import Stop from "./components/Stop";
 import Stops from "./components/Stops";
 // import TotalsPieChart from "./components/TotalsPieChart";
+import { calc } from "./utils/statsCalculator";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -69,6 +70,7 @@ const App = () => {
 
       dispatch(setPoliceData(crimesAtLocation.data));
       dispatch(setStopData(stopsStreet.data));
+      calc(stopsStreet.data);
     } catch (error) {
       console.log(error);
     }
@@ -88,7 +90,8 @@ const App = () => {
       console.log(data);
       setLoading(false);
 
-      if (data.length === 0 && data[0].country != "GB") {
+      //defensive check
+      if (data.length === 0 && data[0].country !== "GB") {
         // if therea are no results or country not GB dont get results
         // if no results then dont look for data
         return;

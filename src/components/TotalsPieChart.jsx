@@ -1,38 +1,35 @@
-import React from "react";
 import { ResponsivePie } from "@nivo/pie";
-
-// Bringing up a strange error message.
-// Need to plug in categories from totals - use id {data.crime.category}?
+import React from "react";
 
 const Pie = () => {
   const sampleData = [
     {
-      id: "anti-social-behaviour",
-      label: "anti-social-behaviour",
+      id: "make",
+      label: "make",
       value: 516,
       color: "hsl(187, 70%, 50%)",
     },
     {
-      id: "public-order",
-      label: "public-order",
+      id: "elixir",
+      label: "elixir",
       value: 148,
       color: "hsl(39, 70%, 50%)",
     },
     {
-      id: "shoplifting",
-      label: "shoplifting",
+      id: "go",
+      label: "go",
       value: 299,
       color: "hsl(72, 70%, 50%)",
     },
     {
-      id: "theft-from-the-person",
-      label: "theft-from-the-person",
+      id: "lisp",
+      label: "lisp",
       value: 56,
       color: "hsl(182, 70%, 50%)",
     },
     {
-      id: "violent-crime",
-      label: "violent-crime",
+      id: "erlang",
+      label: "erlang",
       value: 418,
       color: "hsl(219, 70%, 50%)",
     },
@@ -156,7 +153,6 @@ const Pie = () => {
       ]}
     />
   );
-
   return (
     <>
       <div id="pieTin">{myResponsivePie(sampleData)}</div>
