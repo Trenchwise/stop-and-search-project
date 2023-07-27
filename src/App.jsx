@@ -4,6 +4,7 @@ import axios from "axios";
 import {
   selectCoords,
   selectPoliceData,
+  selectStopsData,
   setCoords,
   setPoliceData,
   setStopData,
@@ -15,7 +16,7 @@ import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
-import Stop from "./components/Stop";
+// import Stop from "./components/Stop";
 import Stops from "./components/Stops";
 // import TotalsPieChart from "./components/TotalsPieChart";
 
@@ -23,6 +24,7 @@ const App = () => {
   const dispatch = useDispatch();
   const coords = useSelector(selectCoords); // all coords live here
   const policeData = useSelector(selectPoliceData);
+  const stopsData = useSelector(selectStopsData);
   const [loading, setLoading] = useState(false);
 
   // gets data stores in the store
@@ -43,27 +45,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    getPoliceData();
-  }, [coords]); // everytime coords change to get location for search by area
-
-  useEffect(() => {
-    getStopData();
-  }, []); // everytime coords change to get location for stop and search
-
-  useEffect(() => {
     getLocation();
   }, []);
-
-  // Stop and search api link
-  // Is working and display data in the store. but lat and long not set.
-  const getStopData = async () => {
-    const dataLink = `https://data.police.uk/api/stops-street?lat=52.629729&lng=-1.131592&date=2023-05`;
-    try {
-      const { data } = await axios.get(dataLink);
-
-      dispatch(setStopData(data));
-    } catch (error) {}
-  };
 
   // The function that gets the data
   const getPoliceData = async () => {
@@ -74,17 +57,26 @@ const App = () => {
     // Dynamically setting the date for use in the api link. It is set to be -1 the current date, because the police data is two months behind
     // using console log to check that the Date method works
     const now = new Date();
-    console.log("hello", now.getFullYear());
 
-    const dataLink = `https://data.police.uk/api/crimes-at-location?date=${now.getFullYear()}-0${now.getMonth() -
+    const crimesAtLocationURL = `https://data.police.uk/api/crimes-at-location?date=${now.getFullYear()}-0${now.getMonth() -
+      1}&lat=${coords.latitude}&lng=${coords.longitude}`;
+    const stopsStreetURL = `https://data.police.uk/api/stops-street?&date=${now.getFullYear()}-0${now.getMonth() -
       1}&lat=${coords.latitude}&lng=${coords.longitude}`;
 
     try {
-      const { data } = await axios.get(dataLink);
+      const crimesAtLocation = await axios.get(crimesAtLocationURL);
+      const stopsStreet = await axios.get(stopsStreetURL);
 
-      dispatch(setPoliceData(data));
-    } catch (error) {}
+      dispatch(setPoliceData(crimesAtLocation.data));
+      dispatch(setStopData(stopsStreet.data));
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+  useEffect(() => {
+    getPoliceData();
+  }, [coords]); // everytime coords change to get location for search by area
 
   // Setting geolocation
   const onInput = async (e) => {
@@ -96,7 +88,8 @@ const App = () => {
       console.log(data);
       setLoading(false);
 
-      if (data.length == 0) {
+      if (data.length === 0 && data[0].country != "GB") {
+        // if therea are no results or country not GB dont get results
         // if no results then dont look for data
         return;
       }
@@ -133,7 +126,9 @@ const App = () => {
             id="inputBox"
           />
         </div>
-        {/* <TotalsPieChart /> */}
+        {/* <div id="pieWrapper">
+          <TotalsPieChart />
+        </div> */}
       </div>
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
@@ -145,8 +140,8 @@ const App = () => {
           <Crimes policeData={policeData} />{" "}
         </>
       )}
-      {/* <Stops />
-      <Stop /> */}
+      <Stops stopsData={stopsData} />
+      {/* <Stop /> */}
       <Footer />
     </div>
   );

@@ -5,8 +5,8 @@ const Crimes = (props) => {
   return (
     <div className="crimes">
       {props.policeData &&
-        props.policeData.map((crime) => {
-          return <Crime crime={crime} />;
+        props.policeData.map((crime, index) => {
+          return <Crime crime={crime} key={index} />;
         })}
     </div>
   );

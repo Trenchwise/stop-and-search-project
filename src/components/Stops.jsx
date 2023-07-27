@@ -5,10 +5,10 @@ import Stop from "./Stop";
 const Stops = (props) => {
   return (
     <>
-      {props.stopData &&
-        props.stopData.map((stop) => {
+      {props.stopsData &&
+        props.stopsData.map((stop, index) => {
           // can live in a component crime
-          return <Stop stop={stop} />;
+          return <Stop stop={stop} key={index} />;
         })}
     </>
   );

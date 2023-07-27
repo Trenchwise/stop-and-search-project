@@ -29,6 +29,6 @@ export const { setPoliceData, setCoords, setStopData } = dataSlice.actions;
 //makes availble to the component the things that live in the store
 export const selectPoliceData = (state) => state.data.crimes;
 export const selectCoords = (state) => state.data.coords;
-export const selectStopData = (state) => state.data.stops;
+export const selectStopsData = (state) => state.data.stops;
 
 export default dataSlice.reducer;

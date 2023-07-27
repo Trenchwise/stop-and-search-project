@@ -7,10 +7,10 @@ const Totals = (props) => {
       <h2 id="totalNumberCrimes">
         {props.policeData && props.policeData.length}
       </h2>
-      {props.totalsAsArray.map((total) => {
+      {props.totalsAsArray.map((total, index) => {
         return (
           // totals component
-          <Total total={total} />
+          <Total total={total} key={index} />
         );
       })}
     </div>
