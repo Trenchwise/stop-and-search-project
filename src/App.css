@@ -112,6 +112,12 @@ body {
   width: 100%;
   height: 2.5rem;
 }
+
+svg text {
+  font-size: 5px;
+  fill: white;
+}
+
 .lds-roller {
   display: inline-block;
   position: relative;

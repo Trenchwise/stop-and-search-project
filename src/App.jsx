@@ -60,9 +60,9 @@ const App = () => {
     const now = new Date();
 
     const crimesAtLocationURL = `https://data.police.uk/api/crimes-at-location?date=${now.getFullYear()}-0${now.getMonth() -
-      1}&lat=${coords.latitude}&lng=${coords.longitude}`;
+      2}&lat=${coords.latitude}&lng=${coords.longitude}`;
     const stopsStreetURL = `https://data.police.uk/api/stops-street?&date=${now.getFullYear()}-0${now.getMonth() -
-      1}&lat=${coords.latitude}&lng=${coords.longitude}`;
+      2}&lat=${coords.latitude}&lng=${coords.longitude}`;
 
     try {
       const crimesAtLocation = await axios.get(crimesAtLocationURL);
