@@ -1,5 +1,4 @@
 export const calc = (stopsData) => {
-  console.log(stopsData);
   const ageRanges = {};
   for (let i = 0; i < stopsData.length; i++) {
     //set counter for the age range if the age range exists add one, otherwise make it one
@@ -7,7 +6,6 @@ export const calc = (stopsData) => {
       ? ageRanges[stopsData[i].age_range] + 1
       : 1;
   }
-  console.log(ageRanges);
 
   const selfDefinedEthnicities = {};
   for (let i = 0; i < stopsData.length; i++) {
@@ -17,5 +15,28 @@ export const calc = (stopsData) => {
       ? selfDefinedEthnicities[stopsData[i].self_defined_ethnicity] + 1
       : 1;
   }
-  console.log(selfDefinedEthnicities);
+};
+
+export const calcTotals = (totalsAsArray) => {
+  const colors = [
+    "red",
+    "green",
+    "blue",
+    "purple",
+    "orange",
+    "pink",
+    "yellow",
+    "black",
+  ];
+
+  // turning data in pie data
+  const chartData = [];
+  totalsAsArray.forEach((chartItem, index) => {
+    const item = {};
+    item.title = chartItem[0];
+    item.value = chartItem[1];
+    item.color = colors[index];
+    chartData.push(item);
+  });
+  return chartData;
 };
