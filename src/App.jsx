@@ -16,10 +16,12 @@ import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
-// import Stop from "./components/Stop";
+import Stop from "./components/Stop";
 import Stops from "./components/Stops";
 // import TotalsPieChart from "./components/TotalsPieChart";
 import { calc } from "./utils/statsCalculator";
+import OutcomeLinkedPie from "./components/OutcomeLinkedPie";
+import LegislationPie from "./components/LegislationPie";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -87,7 +89,7 @@ const App = () => {
       const { data } = await axios.get(
         `http://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=1&appid=17a3e02a9cc47ed1eac90bc2f9c0012a`
       );
-      console.log(data);
+
       setLoading(false);
 
       //defensive check
@@ -115,6 +117,19 @@ const App = () => {
   });
   const totalsAsArray = Object.entries(totals);
 
+  // Attempting to aggregate the outcomes linked to object of search data.
+  // It will either true or false
+
+  const totalOutcomeLinkedObject = {};
+  policeData.forEach((stop) => {
+    totalOutcomeLinkedObject[
+      stop.outcome_linked_to_object_of_search
+    ] = totalOutcomeLinkedObject[stop.outcome_linked_to_object_of_search]
+      ? totalOutcomeLinkedObject[stop.outcome_linked_to_object_of_search] + 1
+      : 1;
+  });
+  const linkedObjectsAsArray = Object.entries(OutcomeLinkedPie);
+
   return (
     <div id="pageContainer">
       <div className="crimeApp">
@@ -138,13 +153,18 @@ const App = () => {
 
       {policeData.length > 0 && (
         <>
-          <Totals totalsAsArray={totalsAsArray} policeData={policeData} />
-          <div id="pieChartWrapper">{/* <TotalsPieChart /> */}</div>
-          <Crimes policeData={policeData} />{" "}
+          <Totals
+            totalsAsArray={totalsAsArray}
+            policeData={policeData}
+            linkedObjectsAsArray={linkedObjectsAsArray}
+          />
+          <LegislationPie stopsData={stopsData} />
+          <OutcomeLinkedPie stopsData={stopsData} />
+          <Crimes policeData={policeData} />
+          <Stops stopsData={stopsData} />
         </>
       )}
-      <Stops stopsData={stopsData} />
-      {/* <Stop /> */}
+
       <Footer />
     </div>
   );
