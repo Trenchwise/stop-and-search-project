@@ -19,7 +19,8 @@ const LegislationPie = (props) => {
   };
 
   return (
-    <div className="OutcomeLinkedPie">
+    <div className="legislationPieWrapper">
+      <h2>Legislation used to conduct Stop and Search</h2>
       <PieChart
         radius={pieChartDefaultProps.radius - 7}
         center={[50, 50]}

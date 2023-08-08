@@ -11,6 +11,8 @@ const colors = [
   "black",
 ];
 
+// Legislation pie chart
+// Function to calculate what legislation was used in the stop by the police
 export const calc = (stopsData) => {
   const legislation = {};
   for (let i = 0; i < stopsData.length; i++) {
@@ -21,18 +23,20 @@ export const calc = (stopsData) => {
       ? legislation[stopsData[i].legislation] + 1
       : 1;
   }
+  // checking the above has added by the how many of the each type of legislation was envoked during the police stop
   console.log(legislation);
+
   const legislationData = [];
   for (const item in legislation) {
     legislationData.push({
       title: item,
       value: legislation[item],
-      color: colors[Math.floor(Math.random() * colors.length - 1)], // finding a random colour
+      color: colors[Math.floor(Math.random() * colors.length - 2)], // finding a random colour
     });
   }
+  console.log(legislationData);
   return legislationData;
 
-  console.log(legislationData);
   // const selfDefinedEthnicities = {};
   // for (let i = 0; i < stopsData.length; i++) {
   //   selfDefinedEthnicities[
@@ -43,6 +47,7 @@ export const calc = (stopsData) => {
   // }
 };
 
+// Outcome linked to object of search piechart
 // Adding up trues,
 export const calcOutcomes = (stopsData) => {
   let totalTrue = 0;
@@ -58,6 +63,8 @@ export const calcOutcomes = (stopsData) => {
   ];
 };
 
+// Crime by area pie chart
+// Crime by area, putting the totals from the categories into a format the pie graph can accept
 export const calcTotals = (totalsAsArray) => {
   const chartData = [];
   totalsAsArray.forEach((chartItem, index) => {

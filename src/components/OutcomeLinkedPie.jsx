@@ -19,7 +19,7 @@ const OutcomeLinkedPie = (props) => {
   };
 
   return (
-    <div className="OutcomeLinkedPie">
+    <div className="OutcomeLinkedPieWrapper">
       <PieChart
         radius={pieChartDefaultProps.radius - 7}
         center={[50, 50]}

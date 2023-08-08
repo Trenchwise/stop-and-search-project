@@ -19,7 +19,23 @@ const Totals = (props) => {
   };
   return (
     <div className="crimeTotals">
+      <h2 id="crimesByAreaTitle">Crimes in your area</h2>
       <PieChart
+        labelPosition={100 - 30}
+        style={{
+          fontFamily:
+            '"Nunito Sans", -apple-system, Helvetica, Arial, sans-serif',
+          fontSize: "2px",
+        }}
+        labelStyle={{
+          fill: "#000", // colour of label text
+          opacity: 0.75,
+          pointerEvents: "none",
+          fontSize: "2px", // label font size
+        }}
+        lineWidth={60} // makes into a donut shape
+        segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
+        animate
         radius={pieChartDefaultProps.radius - 7}
         center={[50, 50]}
         segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
@@ -27,9 +43,12 @@ const Totals = (props) => {
         label={({ dataEntry }) => {
           return dataEntry.title;
         }}
+        background="#bfbfbf" // changes background colour
       />
+
       <h2 id="totalNumberCrimes">
-        {props.policeData && props.policeData.length}
+        {" "}
+        Total Number {props.policeData && props.policeData.length}
       </h2>
       {props.totalsAsArray.map((total, index) => {
         return (
