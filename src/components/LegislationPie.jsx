@@ -1,9 +1,9 @@
 import React from "react";
 import Total from "./Total";
 import { PieChart, pieChartDefaultProps } from "react-minimal-pie-chart";
-import { calcTotals } from "../utils/statsCalculator";
+import { calc } from "../utils/statsCalculator";
 
-const Totals = (props) => {
+const LegislationPie = (props) => {
   const defaultProps = {
     animationDuration: 500,
     animationEasing: "ease-out",
@@ -17,28 +17,20 @@ const Totals = (props) => {
     startAngle: 0,
     viewBoxSize: [100, 100],
   };
+
   return (
-    <div className="crimeTotals">
+    <div className="OutcomeLinkedPie">
       <PieChart
         radius={pieChartDefaultProps.radius - 7}
         center={[50, 50]}
         segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
-        data={calcTotals(props.totalsAsArray)} //returning data in the correct format
+        data={calc(props.stopsData)} //returning data in the correct format
         label={({ dataEntry }) => {
-          return dataEntry.title;
+          return dataEntry.title + " " + dataEntry.value;
         }}
       />
-      <h2 id="totalNumberCrimes">
-        {props.policeData && props.policeData.length}
-      </h2>
-      {props.totalsAsArray.map((total, index) => {
-        return (
-          // totals component
-          <Total total={total} key={index} />
-        );
-      })}
     </div>
   );
 };
 
-export default Totals;
+export default LegislationPie;
