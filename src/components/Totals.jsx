@@ -20,31 +20,33 @@ const Totals = (props) => {
   return (
     <div className="crimeTotals">
       <h2 id="crimesByAreaTitle">Crimes in your area</h2>
-      <PieChart
-        labelPosition={100 - 30}
-        style={{
-          fontFamily:
-            '"Nunito Sans", -apple-system, Helvetica, Arial, sans-serif',
-          fontSize: "2px",
-        }}
-        labelStyle={{
-          fill: "#000", // colour of label text
-          opacity: 0.75,
-          pointerEvents: "none",
-          fontSize: "2px", // label font size
-        }}
-        lineWidth={60} // makes into a donut shape
-        segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
-        animate
-        radius={pieChartDefaultProps.radius - 7}
-        center={[50, 50]}
-        segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
-        data={calcTotals(props.totalsAsArray)} //returning data in the correct format
-        label={({ dataEntry }) => {
-          return dataEntry.title;
-        }}
-        background="#bfbfbf" // changes background colour
-      />
+      <div id="totalsPiechart">
+        <PieChart
+          labelPosition={100 - 30}
+          style={{
+            fontFamily:
+              '"Nunito Sans", -apple-system, Helvetica, Arial, sans-serif',
+            fontSize: "2px",
+          }}
+          labelStyle={{
+            fill: "#888", // colour of label text
+            opacity: 0.85,
+            pointerEvents: "none",
+            fontSize: "5px", // label font size
+          }}
+          lineWidth={60} // makes into a donut shape
+          segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
+          animate
+          radius={pieChartDefaultProps.radius - 7}
+          center={[50, 50]}
+          segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
+          data={calcTotals(props.totalsAsArray)} //returning data in the correct format
+          label={({ dataEntry }) => {
+            return dataEntry.title;
+          }}
+          background="#fefefe" // changes background colour
+        />
+      </div>
 
       <h2 id="totalNumberCrimes">
         {" "}

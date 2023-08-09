@@ -136,7 +136,7 @@ const App = () => {
         <Header />
         <Intro />
         {loading && <Loading />}
-        <div id="inputBoxWrapper">
+        <div id="inputBoxWrapper" className="globalCard">
           <input
             onInput={onInput}
             type="text"
