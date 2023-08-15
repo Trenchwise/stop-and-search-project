@@ -1,11 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Handjet:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Handjet:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Handjet:wght@100;200;300;400;500;600;700;800;900&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap");
+
+.crimeApp {
+  /* width: 100vh;
+  height: 100vh; */
+}
+
 body {
   background: linear-gradient(
     0deg,
     rgba(28, 64, 128, 0.2),
     rgba(28, 64, 128, 0)
   );
-  font-family: "Lato", sans-serif;
+  font-family: "Urbanist";
   color: #888;
+  /* width: 100vh; */
+  /* height: 100vh; */
   /* background-color: #e8e8e8; */
   /* color: antiquewhite; */
 }
@@ -29,19 +40,26 @@ body {
 .headerWrapper {
   /* width: max-content; */
   display: flex;
-  background-color: #003270;
-  flex-direction: row;
+  background-color: #fcfcfd;
+  flex-direction: column-reverse;
   justify-content: center;
+  height: 100px;
 }
 
 #header {
   justify-content: center;
   align-items: center;
-  background-color: #003270;
-  color: #fcfcfd;
+  align-content: center;
+  /* background-color: white; */
+  /* opacity: 0.5; */
+  color: #1c4080;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  top: 10px;
 
   /* width: 100%;
-  height: 60px; */
+  /* height: 60px; 
   /* text-align: center; */
   margin: 0;
 }
@@ -49,22 +67,50 @@ body {
 .headerTitle {
   justify-content: center;
   align-items: center;
-  color: #e7f2ff;
+  color: #0c0c0d;
   text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 2.7rem;
+}
+
+.headerSvgWrapper {
+  width: 60px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  display: inline-block;
+}
+
+#headerSvg {
+  position: relative;
+  right: 20px;
+  top: -10px;
 }
 
 #introWrapper {
   margin: 20px;
+  /* width: 450px; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   border: solid;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   border-color: #f0f0f0;
 }
 
-.crimeTotals {
+.introIcon {
+  height: 80px;
+  width: 80px;
+}
+
+.introSentenceOneWrapper,
+.introSentenceTwoWrapper {
+  display: flex;
+  /* align-items: ; */
+}
+
+. .crimeTotals {
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -141,21 +187,31 @@ body {
 
 #inputBoxWrapper {
   margin: 20px;
+  height: 30px;
+
+  /* width: ; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   border: solid;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 20px;
   border-color: #f0f0f0;
+  background-color: #fefefe;
+  /* if you decide to add an icon here will need change align items and maybe add some padding */
+  /* have hidden the wrapper but it is still there */
 }
 
 #inputBox {
-  height: 1.5rem;
-  width: 15rem;
+  height: 40px;
+  width: 100;
   display: flex;
-  border-radius: 5px;
-  border: #f0f0f0 solid;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  /* padding-right: 400px; */
+  font-size: 16px;
+  max-width: 480px;
 }
 
 #footer {

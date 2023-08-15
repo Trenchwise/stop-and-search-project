@@ -136,7 +136,7 @@ const App = () => {
         <Header />
         <Intro />
         {loading && <Loading />}
-        <div id="inputBoxWrapper" className="globalCard">
+        <div id="inputBoxWrapper">
           <input
             onInput={onInput}
             type="text"
@@ -144,9 +144,6 @@ const App = () => {
             id="inputBox"
           />
         </div>
-        {/* <div id="pieWrapper">
-          <TotalsPieChart />
-        </div> */}
       </div>
 
       {/* // showing how many instances are in the data by mapping over the data and returning a value */}
