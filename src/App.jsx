@@ -140,7 +140,7 @@ const App = () => {
           <input
             onInput={onInput}
             type="text"
-            placeholder="Enter your area here"
+            placeholder="Area here"
             id="inputBox"
           />
         </div>

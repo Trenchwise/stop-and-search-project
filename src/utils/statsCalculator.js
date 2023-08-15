@@ -1,6 +1,15 @@
 import { orange } from "@mui/material/colors";
 
 const colors = [
+  "#ff90e7",
+  "#ffc900",
+  "#22a094",
+  "#F45B69", // bright pink
+  "#114B5F", //midnight green
+  "#553E4E", // eggplant
+  "#9EBC9E", //cambridge blue
+  "#9EBC9E", // looks yellow
+  "#2274A5", // UCLA blue
   "red",
   "green",
   "blue",
@@ -8,7 +17,9 @@ const colors = [
   "orange",
   "pink",
   "yellow",
-  "black",
+  "teal",
+  "grey",
+  ,
 ];
 
 // Legislation pie chart

@@ -21,15 +21,33 @@ const LegislationPie = (props) => {
   return (
     <div className="legislationPieWrapper">
       <h2>Legislation used to conduct Stop and Search</h2>
-      <PieChart
-        radius={pieChartDefaultProps.radius - 7}
-        center={[50, 50]}
-        segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
-        data={calc(props.stopsData)} //returning data in the correct format
-        label={({ dataEntry }) => {
-          return dataEntry.title + " " + dataEntry.value;
-        }}
-      />
+      <div className="innerlegislationPieWrapper">
+        <PieChart
+          labelPosition={100 - 30}
+          style={{
+            fontFamily:
+              '"Nunito Sans", -apple-system, Helvetica, Arial, sans-serif',
+            fontSize: "2px",
+          }}
+          labelStyle={{
+            fill: "#888", // colour of label text
+            opacity: 0.85,
+            pointerEvents: "none",
+            fontSize: "px", // label font size
+          }}
+          lineWidth={60} // makes into a donut shape
+          segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
+          animate
+          radius={pieChartDefaultProps.radius - 7}
+          center={[50, 50]}
+          segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
+          data={calc(props.stopsData)} //returning data in the correct format
+          label={({ dataEntry }) => {
+            return dataEntry.title + " " + dataEntry.value;
+          }}
+          background="#fefefe" // changes background colour
+        />
+      </div>
     </div>
   );
 };
