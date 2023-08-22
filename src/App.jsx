@@ -22,6 +22,7 @@ import Stops from "./components/Stops";
 import { calc } from "./utils/statsCalculator";
 import OutcomeLinkedPie from "./components/OutcomeLinkedPie";
 import LegislationPie from "./components/LegislationPie";
+// import EthnicityPie from "./components/EthnicityPie";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -157,6 +158,7 @@ const App = () => {
           />
           <LegislationPie stopsData={stopsData} />
           <OutcomeLinkedPie stopsData={stopsData} />
+          {/* <EthnicityPie stopsData={stopsData} /> */}
           <Crimes policeData={policeData} />
           <Stops stopsData={stopsData} />
         </>

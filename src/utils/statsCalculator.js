@@ -37,6 +37,7 @@ export const calc = (stopsData) => {
   // checking the above has added by the how many of the each type of legislation was envoked during the police stop
   console.log(legislation);
 
+  // formatting for pie chart
   const legislationData = [];
   for (const item in legislation) {
     legislationData.push({
@@ -47,15 +48,6 @@ export const calc = (stopsData) => {
   }
   console.log(legislationData);
   return legislationData;
-
-  // const selfDefinedEthnicities = {};
-  // for (let i = 0; i < stopsData.length; i++) {
-  //   selfDefinedEthnicities[
-  //     stopsData[i].self_defined_ethnicity
-  //   ] = selfDefinedEthnicities[stopsData[i].self_defined_ethnicity]
-  //     ? selfDefinedEthnicities[stopsData[i].self_defined_ethnicity] + 1
-  //     : 1;
-  // }
 };
 
 // Outcome linked to object of search piechart
@@ -69,8 +61,8 @@ export const calcOutcomes = (stopsData) => {
   }
   //in the structure that the graph requires
   return [
-    { title: "True", value: totalTrue, color: "#E38627" },
-    { title: "False", value: stopsData.length - totalTrue, color: "#C13C37" },
+    { title: "Yes, the reason was good", value: totalTrue, color: "#ffc900" },
+    { title: "Nope 👀", value: stopsData.length - totalTrue, color: "#9EBC9E" },
   ];
 };
 
@@ -87,3 +79,25 @@ export const calcTotals = (totalsAsArray) => {
   });
   return chartData;
 };
+
+// Ethnicity of assailant pie - why wont it export?
+// export const calcEthnicities = (stopsData) => {
+//   const ethnicity = {};
+//   for (let i = 0; i < stopsData.length; i++) {
+//     ethnicity[stopsData[i].self_defined_ethnicity] = ethnicity[
+//       stopsData[i].self_defined_ethnicity
+//     ]
+//       ? ethnicity[stopsData[i].self_defined_ethnicity] + 1
+//       : 1;
+//   }
+//   const ethnicityData = [];
+//   for (const item in ethnicity) {
+//     ethnicityData.push({
+//       title: item,
+//       value: ethnicity.item,
+//       color: colors[Math.floor(Math.random() * colors.length - 2)],
+//     });
+//   }
+// };
+// console.log(ethnicityData);
+// return ethnicityData;
