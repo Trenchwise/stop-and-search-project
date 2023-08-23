@@ -19,7 +19,6 @@ const colors = [
   "yellow",
   "teal",
   "grey",
-  ,
 ];
 
 // Legislation pie chart
@@ -35,18 +34,20 @@ export const calc = (stopsData) => {
       : 1;
   }
   // checking the above has added by the how many of the each type of legislation was envoked during the police stop
-  console.log(legislation);
 
   // formatting for pie chart
   const legislationData = [];
   for (const item in legislation) {
+    const randomNumber = Math.floor(Math.random() * (colors.length - 1));
+    const randomColor = colors[randomNumber];
+    console.log(randomColor, colors.length, randomNumber);
     legislationData.push({
       title: item,
       value: legislation[item],
-      color: colors[Math.floor(Math.random() * colors.length - 2)], // finding a random colour
+      color: randomColor, // finding a random colour
     });
   }
-  console.log(legislationData);
+  console.log(legislation);
   return legislationData;
 };
 
@@ -80,24 +81,36 @@ export const calcTotals = (totalsAsArray) => {
   return chartData;
 };
 
+// include more ethniticities
+const ethnicitiesConverstion = {
+  "Black/African/Caribbean/Black British - Any other Black/African/Caribbean background":
+    "Black",
+  "Mixed/Multiple ethnic groups - Any other Mixed/Multiple ethnic background":
+    "Mixed",
+  "White - Any other White background": "Other white",
+  "White - English/Welsh/Scottish/Northern Irish/British": "White",
+  null: "Not provided",
+};
+
 // Ethnicity of assailant pie - why wont it export?
-// export const calcEthnicities = (stopsData) => {
-//   const ethnicity = {};
-//   for (let i = 0; i < stopsData.length; i++) {
-//     ethnicity[stopsData[i].self_defined_ethnicity] = ethnicity[
-//       stopsData[i].self_defined_ethnicity
-//     ]
-//       ? ethnicity[stopsData[i].self_defined_ethnicity] + 1
-//       : 1;
-//   }
-//   const ethnicityData = [];
-//   for (const item in ethnicity) {
-//     ethnicityData.push({
-//       title: item,
-//       value: ethnicity.item,
-//       color: colors[Math.floor(Math.random() * colors.length - 2)],
-//     });
-//   }
-// };
-// console.log(ethnicityData);
-// return ethnicityData;
+export const calcEthnicities = (stopsData) => {
+  const ethnicity = {};
+  for (let i = 0; i < stopsData.length; i++) {
+    ethnicity[stopsData[i].self_defined_ethnicity] = ethnicity[
+      stopsData[i].self_defined_ethnicity
+    ]
+      ? ethnicity[stopsData[i].self_defined_ethnicity] + 1
+      : 1;
+  }
+
+  const ethnicityData = [];
+  for (const item in ethnicity) {
+    ethnicityData.push({
+      title: ethnicitiesConverstion[item], // looking up ethnicity item above
+      value: ethnicity[item], // problem was here
+      color: colors[Math.floor(Math.random() * colors.length - 2)],
+    });
+  }
+
+  return ethnicityData;
+};
