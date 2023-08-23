@@ -40,14 +40,13 @@ export const calc = (stopsData) => {
   for (const item in legislation) {
     const randomNumber = Math.floor(Math.random() * (colors.length - 1));
     const randomColor = colors[randomNumber];
-    console.log(randomColor, colors.length, randomNumber);
+    // console.log(randomColor, colors.length, randomNumber);
     legislationData.push({
       title: item,
       value: legislation[item],
       color: randomColor, // finding a random colour
     });
   }
-  console.log(legislation);
   return legislationData;
 };
 
@@ -85,16 +84,30 @@ export const calcTotals = (totalsAsArray) => {
 const ethnicitiesConverstion = {
   "Black/African/Caribbean/Black British - Any other Black/African/Caribbean background":
     "Black",
+  "Black/African/Caribbean/Black British - African": "Black African",
+  "Black/African/Caribbean/Black British - Caribbean": "Black Caribbean",
   "Mixed/Multiple ethnic groups - Any other Mixed/Multiple ethnic background":
-    "Mixed",
+    "Mixed ethnicity",
+  "Mixed/Multiple ethnic groups - White and Asian": "Mixed Asian & White",
+  "Mixed/Multiple ethnic groups - White and Black Caribbean":
+    "Mixed Black Caribean & White",
+  "Other ethnic group - Any other ethnic group": "Other ethnic group",
   "White - Any other White background": "Other white",
   "White - English/Welsh/Scottish/Northern Irish/British": "White",
+  "White - Irish": "White - Irish",
   null: "Not provided",
+  "Other ethnic group - Not stated": "Not stated",
+  "Asian/Asian British - Any other Asian background": "Asian other",
+  "Asian/Asian British - Bangladeshi": "Aisan - Bangladeshi",
+  "Asian/Asian British - Chinese": "Asian - Chinese",
+  "Asian/Asian British - Indian": "Asian - Indian",
+  "Asian/Asian British - Pakistani": "Asian - Pakistani",
 };
 
 // Ethnicity of assailant pie - why wont it export?
 export const calcEthnicities = (stopsData) => {
   const ethnicity = {};
+  console.log(ethnicity);
   for (let i = 0; i < stopsData.length; i++) {
     ethnicity[stopsData[i].self_defined_ethnicity] = ethnicity[
       stopsData[i].self_defined_ethnicity
