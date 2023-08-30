@@ -19,7 +19,9 @@ const Totals = (props) => {
   };
   return (
     <div className="crimeTotals">
-      <h2 id="crimesByAreaTitle">Crimes in your area</h2>
+      <h2 id="crimesByAreaTitle" className="titles">
+        Crimes in your area
+      </h2>
       <div id="totalsAndCrimeWrapper">
         <div id="totalsPiechart">
           <PieChart
@@ -33,7 +35,7 @@ const Totals = (props) => {
               fill: "#888", // colour of label text
               opacity: 0.85,
               pointerEvents: "none",
-              fontSize: "px", // label font size
+              fontSize: "5px", // label font size
             }}
             lineWidth={60} // makes into a donut shape
             segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
@@ -47,13 +49,21 @@ const Totals = (props) => {
             }}
             background="#fefefe" // changes background colour
           />
+          <div>
+            <h2 id="totalsPieChartText">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </h2>
+          </div>
         </div>
 
         <div id="totalNumberCrimesWrapper">
-          <h2 id="totalNumberCrimes">
+          <p id="totalNumberCrimes">
             {" "}
             Total Number {props.policeData && props.policeData.length}
-          </h2>
+          </p>
           {props.totalsAsArray.map((total, index) => {
             return (
               // totals component

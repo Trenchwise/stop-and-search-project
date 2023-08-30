@@ -20,7 +20,7 @@ const LegislationPie = (props) => {
 
   return (
     <div className="legislationPieWrapper">
-      <h2>Legislation used to conduct Stop and Search</h2>
+      <h2 className="titles">Legislation used to conduct Stop and Search</h2>
       <div className="innerlegislationPieWrapper">
         <PieChart
           labelPosition={100 - 30}
@@ -47,6 +47,14 @@ const LegislationPie = (props) => {
           }}
           background="#fefefe" // changes background colour
         />
+        <div>
+          <h2 className="pieText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </h2>
+        </div>
       </div>
     </div>
   );

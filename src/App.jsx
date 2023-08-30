@@ -95,6 +95,7 @@ const App = () => {
 
       //defensive check
       if (data.length === 0 && data[0].country !== "GB") {
+        // if the length of the data = 0 or if the country is no GB dont return anything
         // if therea are no results or country not GB dont get results
         // if no results then dont look for data
         return;

@@ -20,7 +20,7 @@ const OutcomeLinkedPie = (props) => {
 
   return (
     <div className="OutcomeLinkedPieWrapper">
-      <h2 id="outcomesTitle">
+      <h2 id="outcomesTitle" className="titles">
         Did the police find what they were looking for?
       </h2>
       <div className="innerOutcomeLinkedWrapper">

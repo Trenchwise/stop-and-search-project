@@ -28,6 +28,16 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.titles {
+  font-family: "Permanent Marker";
+  justify-content: center;
+  align-items: center;
+  color: #3734ff;
+
+  /* color: #0c0c0d; black option */
+  text-align: center;
+}
+
 #pageContainer {
   position: relative;
   min-height: 100vh;
@@ -186,7 +196,7 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-innerOutcomeLinkedWrapper {
+.innerOutcomeLinkedWrapper {
   width: 300px;
 }
 
@@ -209,8 +219,18 @@ innerOutcomeLinkedWrapper {
   font-weight: 700px;
 }
 
+#totalsPieChartText {
+  display: flex;
+  font-weight: 700px;
+  max-width: 400px;
+  font-size: 10px;
+  margin-left: 20px;
+}
+
 .totalsAndCrimeWrapper {
   display: flex;
+  padding-left: 0px;
+  justify-content: space-between;
 }
 
 #inputBoxWrapper {
