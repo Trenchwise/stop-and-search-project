@@ -30,10 +30,10 @@ const LegislationPie = (props) => {
             fontSize: "2px",
           }}
           labelStyle={{
-            fill: "#888", // colour of label text
+            fill: "#fff", // colour of label text
             opacity: 0.85,
             pointerEvents: "none",
-            fontSize: "px", // label font size
+            fontSize: "5px", // label font size
           }}
           lineWidth={60} // makes into a donut shape
           segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
@@ -45,7 +45,7 @@ const LegislationPie = (props) => {
           label={({ dataEntry }) => {
             return dataEntry.title + " " + dataEntry.value;
           }}
-          background="#fefefe" // changes background colour
+          background="#1b2d48" // changes background colour
         />
         <div>
           <h2 className="pieText">

@@ -1,24 +1,25 @@
 import { orange } from "@mui/material/colors";
 
 const colors = [
-  "#ff90e7",
-  "#ffc900",
+  "#bd6aab", //sig pink, now dark
+  "#bd9502", //  sig yellow ffc900
   "#22a094",
-  "#F45B69", // bright pink
+  "#F45B69", // bright pink (pink before, too light for white text) #bd6aab
   "#114B5F", //midnight green
   "#553E4E", // eggplant
   "#9EBC9E", //cambridge blue
-  "#9EBC9E", // looks yellow
+  "#9EBC9E", // green
   "#2274A5", // UCLA blue
-  "red",
-  "green",
-  "blue",
-  "purple",
-  "orange",
-  "pink",
-  "yellow",
-  "teal",
-  "grey",
+  "#r3f1259",
+  "#g3b0c22",
+  "#0d4242",
+  "#2a420d",
+  "#664c14",
+  "#662214",
+  "#870808",
+  "#051a66",
+  "#5c4c53",
+  "#515c4c",
 ];
 
 // Legislation pie chart
@@ -61,8 +62,8 @@ export const calcOutcomes = (stopsData) => {
   }
   //in the structure that the graph requires
   return [
-    { title: "Yes, the reason was good", value: totalTrue, color: "#ffc900" },
-    { title: "Nope 👀", value: stopsData.length - totalTrue, color: "#9EBC9E" },
+    { title: "Yes", value: totalTrue, color: "#bd6aab" },
+    { title: "No  👀", value: stopsData.length - totalTrue, color: "#ffc900" },
   ];
 };
 

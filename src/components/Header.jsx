@@ -1,4 +1,5 @@
 import React from "react";
+// import gsap from "gsap";
 
 const Header = () => {
   return (
@@ -26,6 +27,7 @@ const Header = () => {
             <g id="SVGRepo_iconCarrier">
               {" "}
               <path
+                className="glasses"
                 d="M107.959 118.707C112.507 109.238 119.972 102.956 130.392 101.245C179.396 93.2005 214.204 155.467 173.452 188.916C136.661 219.112 88.5141 182.545 101.445 140.091"
                 stroke="#0c0c0d" // glasses
                 stroke-opacity="0.9"
@@ -34,6 +36,7 @@ const Header = () => {
                 stroke-linejoin="round"
               />{" "}
               <path
+                className="glasses"
                 d="M223.138 126.077C256.976 65.954 347.241 123.665 303.865 178.979C274.655 216.229 207.817 202.447 216.774 149.735"
                 stroke="#0c0c0d" //glasses
                 stroke-opacity="0.9"
@@ -98,6 +101,7 @@ const Header = () => {
                 stroke-linejoin="round"
               />{" "}
               <path
+                className="eye"
                 d="M142.439 155.071C142.866 151.4 142.787 147.686 142.787 143.991"
                 stroke="hsl(30,100%,24%)" //left eye
                 stroke-opacity="1"
@@ -106,6 +110,7 @@ const Header = () => {
                 stroke-linejoin="round"
               />{" "}
               <path
+                className="eye"
                 d="M265.689 160.092C265.689 155.18 265.811 151.693 266.303 147.198"
                 stroke="hsl(30,100%,24%)" //right eye
                 stroke-opacity="1"

@@ -23,16 +23,18 @@ body {
 }
 
 .globalCard {
-  background-color: #fefefe;
+  /* background-color: #fefefe; white background colour */
+  background-color: #1b2d48;
+
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
-  font-family: "Lato", sans-serif;
+  font-family: "Urbanist";
 }
 
 .titles {
-  font-family: "Permanent Marker";
+  font-family: "Urbanist";
   justify-content: center;
   align-items: center;
-  color: #3734ff;
+  color: #888;
 
   /* color: #0c0c0d; black option */
   text-align: center;
@@ -41,7 +43,7 @@ body {
 #pageContainer {
   position: relative;
   min-height: 100vh;
-  font-family: "Lato", sans-serif;
+  font-family: "Urbanist";
 }
 
 .crimeApp {
@@ -51,7 +53,7 @@ body {
 .headerWrapper {
   /* width: max-content; */
   display: flex;
-  background-color: #fcfcfd;
+  background-color: #eff0f3;
   flex-direction: column-reverse;
   justify-content: center;
   height: 200px;
@@ -78,20 +80,24 @@ body {
 .headerTitle {
   justify-content: center;
   align-items: center;
-  color: #3734ff;
+  color: #32558a;
+  background-color: none;
 
   /* color: #0c0c0d; black option */
   text-align: center;
   font-family: "Permanent Marker";
-  font-size: 4.7rem;
+  font-size: 3.7rem;
+  margin-top: -25px;
+  min-width: 440px;
 }
 
 .headerSvgWrapper {
   width: 100px;
-  height: 20px;
+  height: 100px;
   border-radius: 4px;
   display: flex;
   display: inline-block;
+  background-color: none;
 }
 
 #headerSvg {
@@ -134,10 +140,13 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: #fefefe;
-  color: #0c0c0d;
-  background-color: #fefefe;
+  /* color: #0c0c0d;
+  background-color: #fefefe; */
+  color: #888;
+  background-color: #1b2d48;
+
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
-  font-family: "Lato", sans-serif;
+  font-family: "Urbanist";
 }
 
 .crime {
@@ -191,9 +200,10 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: #f0f0f0;
-  background-color: #fefefe;
+  background-color: #1b2d48;
+  /* background-color: #fefefe; */
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
-  font-family: "Lato", sans-serif;
+  font-family: "urbanist";
 }
 
 .innerOutcomeLinkedWrapper {
@@ -209,7 +219,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: #f0f0f0;
-  background-color: #fefefe;
+  background-color: #1b2d48;
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
   font-family: "Lato", sans-serif;
 }
@@ -236,8 +246,6 @@ body {
 #inputBoxWrapper {
   margin: 20px;
   height: 30px;
-
-  /* width: ; */
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -245,7 +253,9 @@ body {
   padding: 20px;
   border-radius: 20px;
   border-color: #f0f0f0;
-  background-color: #fefefe;
+  background-color: #1b2d48;
+
+  /* background-color: #fefefe; white/light colour background*/
   /* if you decide to add an icon here will need change align items and maybe add some padding */
   /* have hidden the wrapper but it is still there */
 }
@@ -258,8 +268,36 @@ body {
   border: none;
   outline: none;
   /* padding-right: 400px; */
-  font-size: 16px;
+  font-size: 18px;
   max-width: 480px;
+  background-color: #1b2d48;
+  font-family: "Urbanist";
+  font-weight: bold;
+}
+
+::placeholder {
+  color: #888;
+  background-color: #1b2d48;
+  padding-left: 10px;
+}
+
+/* textarea {
+  background-color: #1b2d48; did not work to change placeholder text
+} */
+
+.EthnicityPieWrapper {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: #f0f0f0;
+  background-color: #1b2d48;
+  /* background-color: #fefefe; */
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  font-family: "urbanist";
 }
 
 #footer {

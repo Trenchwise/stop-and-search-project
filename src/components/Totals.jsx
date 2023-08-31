@@ -32,24 +32,24 @@ const Totals = (props) => {
               fontSize: "2px",
             }}
             labelStyle={{
-              fill: "#888", // colour of label text
-              opacity: 0.85,
+              fill: "#ffffff", // colour of label text
+              opacity: 0.95,
               pointerEvents: "none",
               fontSize: "5px", // label font size
             }}
             lineWidth={60} // makes into a donut shape
             segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
             animate
-            radius={pieChartDefaultProps.radius - 7}
+            radius={pieChartDefaultProps.radius - 10}
             center={[50, 50]}
             segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
             data={calcTotals(props.totalsAsArray)} //returning data in the correct format
             label={({ dataEntry }) => {
               return dataEntry.title;
             }}
-            background="#fefefe" // changes background colour
+            background="#1b2d48" // changes background colour
           />
-          <div>
+          <div id="crimeTotalsTextWrapper">
             <h2 id="totalsPieChartText">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
