@@ -26,19 +26,19 @@ const LegislationPie = (props) => {
           labelPosition={100 - 30}
           style={{
             fontFamily:
-              '"Nunito Sans", -apple-system, Helvetica, Arial, sans-serif',
-            fontSize: "2px",
+              '"Urbanist", -apple-system, Helvetica, Arial, sans-serif',
+            fontSize: "5px",
           }}
           labelStyle={{
             fill: "#fff", // colour of label text
-            opacity: 0.85,
+            opacity: 0.95,
             pointerEvents: "none",
             fontSize: "5px", // label font size
           }}
           lineWidth={60} // makes into a donut shape
           segmentsStyle={{ transition: "stroke .2s", cursor: "pointer" }}
           animate
-          radius={pieChartDefaultProps.radius - 7}
+          radius={pieChartDefaultProps.radius - 10}
           center={[50, 50]}
           segmentsShift={(index) => (index === 0 ? 7 : 0.5)}
           data={calc(props.stopsData)} //returning data in the correct format

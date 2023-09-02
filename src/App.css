@@ -11,11 +11,17 @@
 body {
   background: linear-gradient(
     0deg,
+    rgba(242, 189, 159, 0.2),
+    rgba(242, 189, 159, 0)
+  );
+
+  /* linear-gradient(
+    0deg,
     rgba(28, 64, 128, 0.2),
     rgba(28, 64, 128, 0)
-  );
+  ); */
   font-family: "Urbanist";
-  color: #888;
+  color: #f2bd9f;
   /* width: 100vh; */
   /* height: 100vh; */
   /* background-color: #e8e8e8; */
@@ -34,7 +40,7 @@ body {
   font-family: "Urbanist";
   justify-content: center;
   align-items: center;
-  color: #888;
+  color: #f2bd9f;
 
   /* color: #0c0c0d; black option */
   text-align: center;
@@ -50,10 +56,18 @@ body {
   position: relative;
 }
 
+.pieText {
+  display: flex;
+  font-weight: 700px;
+  max-width: 400px;
+  font-size: 15px;
+  margin-left: 20px;
+}
+
 .headerWrapper {
   /* width: max-content; */
   display: flex;
-  background-color: #eff0f3;
+  background-color: #faf7f6;
   flex-direction: column-reverse;
   justify-content: center;
   height: 200px;
@@ -66,6 +80,7 @@ body {
   /* background-color: white; */
   /* opacity: 0.5; */
   color: #1c4080;
+  opacity: 1;
   display: flex;
   flex-direction: column-reverse;
   position: relative;
@@ -80,8 +95,9 @@ body {
 .headerTitle {
   justify-content: center;
   align-items: center;
-  color: #32558a;
+  color: #1b2d48;
   background-color: none;
+  text-shadow: 2.5px 2.5px #ffc900;
 
   /* color: #0c0c0d; black option */
   text-align: center;
@@ -142,15 +158,16 @@ body {
   border-color: #fefefe;
   /* color: #0c0c0d;
   background-color: #fefefe; */
-  color: #888;
+  color: #f2bd9f;
   background-color: #1b2d48;
 
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
   font-family: "Urbanist";
 }
 
-.crime {
-  background-color: #fefefe;
+.crime,
+.stopItemWrapper {
+  background-color: #1b2d48;
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
   font-family: "Lato", sans-serif;
   margin: 20px;
@@ -161,7 +178,6 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: #f0f0f0;
-  background-color: white;
 }
 
 .crimes {
@@ -171,7 +187,8 @@ body {
   justify-content: space-evenly;
 }
 
-.stopItemWrapper {
+/* not needed anymore */
+/* .stopItemWrapper {
   background-color: #fefefe;
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
   font-family: "Lato", sans-serif;
@@ -185,7 +202,7 @@ body {
   border-color: #f0f0f0;
   background-color: white;
   margin: 10px;
-}
+} */
 
 .innerlegislationPieWrapper {
   width: 300px;
@@ -227,13 +244,14 @@ body {
 #totalsPiechart {
   display: flex;
   font-weight: 700px;
+  flex-direction: column;
 }
 
 #totalsPieChartText {
   display: flex;
   font-weight: 700px;
   max-width: 400px;
-  font-size: 10px;
+  font-size: 15px;
   margin-left: 20px;
 }
 
@@ -273,10 +291,11 @@ body {
   background-color: #1b2d48;
   font-family: "Urbanist";
   font-weight: bold;
+  color: #f2bd9f;
 }
 
 ::placeholder {
-  color: #888;
+  color: #f2bd9f;
   background-color: #1b2d48;
   padding-left: 10px;
 }

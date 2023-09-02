@@ -1,5 +1,3 @@
-import { orange } from "@mui/material/colors";
-
 const colors = [
   "#bd6aab", //sig pink, now dark
   "#bd9502", //  sig yellow ffc900

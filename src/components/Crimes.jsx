@@ -3,12 +3,15 @@ import Crime from "./Crime";
 
 const Crimes = (props) => {
   return (
-    <div className="crimes">
-      {props.policeData &&
-        props.policeData.map((crime, index) => {
-          return <Crime crime={crime} key={index} />;
-        })}
-    </div>
+    <>
+      <h2 className="titles crimeTotals">More info</h2>
+      <div className="crimes">
+        {props.policeData &&
+          props.policeData.map((crime, index) => {
+            return <Crime crime={crime} key={index} />;
+          })}
+      </div>
+    </>
   );
 };
 

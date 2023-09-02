@@ -46,6 +46,14 @@ const OutcomeLinkedPie = (props) => {
           }}
           background="#1b2d48" // changes background colour
         />
+        <div id="OutcomeLinkedTextWrapper">
+          <h2 className="pieText">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </h2>
+        </div>
       </div>
     </div>
   );

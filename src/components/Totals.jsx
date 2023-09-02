@@ -28,8 +28,8 @@ const Totals = (props) => {
             labelPosition={100 - 30}
             style={{
               fontFamily:
-                '"Nunito Sans", -apple-system, Helvetica, Arial, sans-serif',
-              fontSize: "2px",
+                '"Urbanist", -apple-system, Helvetica, Arial, sans-serif',
+              fontSize: "10px",
             }}
             labelStyle={{
               fill: "#ffffff", // colour of label text
