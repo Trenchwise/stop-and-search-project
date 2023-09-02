@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import gsap from "gsap";
 import {
   selectCoords,
   selectPoliceData,
@@ -18,11 +19,11 @@ import Footer from "./components/Footer";
 import Intro from "./components/Intro";
 import Stop from "./components/Stop";
 import Stops from "./components/Stops";
-// import TotalsPieChart from "./components/TotalsPieChart";
 import { calc } from "./utils/statsCalculator";
 import OutcomeLinkedPie from "./components/OutcomeLinkedPie";
 import LegislationPie from "./components/LegislationPie";
 import EthnicityPie from "./components/EthnicityPie";
+// import eyeAnimation from "./components/EyeAnimation";
 
 const App = () => {
   const dispatch = useDispatch();

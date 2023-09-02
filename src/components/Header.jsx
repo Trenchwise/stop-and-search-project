@@ -1,10 +1,17 @@
-import React from "react";
-import EyeAnimation from "./EyeAnimation";
+import React, { useRef } from "react";
 import gsap from "gsap";
 
 // import gsap from "gsap";
 
 const Header = () => {
+  // const MoveEyes = ({ eyes }) => {
+  //   gsap.fromTo(
+  //     "eyes",
+  //     { x: -500, fill: "blue" },
+  //     { x: 500, duration: 50, fill: "green" }
+  //   );
+  // };
+
   return (
     <>
       <div className="headerWrapper">
@@ -158,11 +165,8 @@ const Header = () => {
             </svg>
           </div>
         </header>
+        {/* <EyeAnimation moveEyes={moveEyes} /> */}
       </div>
-      {/* attempting to make the eyes move backwards and forwards */}
-      {/* {gsap.fromTo(".eye", { x: -40 }, { x: 40 })} */}
-
-      {/* <EyeAnimation /> */}
     </>
   );
 };
