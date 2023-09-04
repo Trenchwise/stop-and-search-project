@@ -1,22 +1,21 @@
 import React from "react";
-import Total from "./Total";
 import { PieChart, pieChartDefaultProps } from "react-minimal-pie-chart";
-import { calcOutcomes, calcTotals } from "../utils/statsCalculator";
+import { calcOutcomes } from "../utils/statsCalculator";
 
 const OutcomeLinkedPie = (props) => {
-  const defaultProps = {
-    animationDuration: 500,
-    animationEasing: "ease-out",
-    center: [50, 50],
-    data: [],
-    labelPosition: 50,
-    lengthAngle: 360,
-    lineWidth: 100,
-    paddingAngle: 0,
-    radius: 50,
-    startAngle: 0,
-    viewBoxSize: [100, 100],
-  };
+  // const defaultProps = {
+  //   animationDuration: 500,
+  //   animationEasing: "ease-out",
+  //   center: [50, 50],
+  //   data: [],
+  //   labelPosition: 50,
+  //   lengthAngle: 360,
+  //   lineWidth: 100,
+  //   paddingAngle: 0,
+  //   radius: 50,
+  //   startAngle: 0,
+  //   viewBoxSize: [100, 100],
+  // };
 
   return (
     <div className="OutcomeLinkedPieWrapper">

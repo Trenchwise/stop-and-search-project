@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import gsap from "gsap";
 import {
   selectCoords,
   selectPoliceData,
@@ -17,7 +16,6 @@ import Loading from "./components/Loading";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Intro from "./components/Intro";
-import Stop from "./components/Stop";
 import Stops from "./components/Stops";
 import { calc } from "./utils/statsCalculator";
 import OutcomeLinkedPie from "./components/OutcomeLinkedPie";
@@ -89,7 +87,7 @@ const App = () => {
     try {
       setLoading(true);
       const { data } = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=1&appid=17a3e02a9cc47ed1eac90bc2f9c0012a`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${e.target.value}&limit=1&appid=17a3e02a9cc47ed1eac90bc2f9c0012a`
       );
 
       setLoading(false);
