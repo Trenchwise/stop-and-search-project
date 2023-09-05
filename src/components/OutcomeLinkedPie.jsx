@@ -47,10 +47,9 @@ const OutcomeLinkedPie = (props) => {
         />
         <div id="OutcomeLinkedTextWrapper">
           <h2 className="pieText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            In London between 2023 and June 2023, 65% of stop and searches led
+            to no further action. Over half of reasons used to make stop and
+            searched were not found.
           </h2>
         </div>
       </div>

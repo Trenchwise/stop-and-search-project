@@ -10,12 +10,13 @@
 }
 
 body {
-  background: linear-gradient(
+  background-color: #fcf1eb;
+  /* background: linear-gradient(
     0deg,
     rgba(242, 211, 194, 0.2),
     rgba(242, 189, 159, 0),
     height: 100vh;
-  );
+  ); */
 
   /* linear-gradient(
     0deg,
@@ -69,13 +70,15 @@ body {
 .headerWrapper {
   /* width: max-content; */
   display: flex;
-  background-color: #faf7f6;
+  background-color: #fcf1eb;
   flex-direction: column-reverse;
   justify-content: center;
-  height: 300px;
+  height: 220px;
+  margin-top: -40px;
 }
 
 #header {
+  /* height: 240px; */
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -104,9 +107,10 @@ body {
   /* color: #0c0c0d; black option */
   text-align: center;
   font-family: "Permanent Marker";
-  font-size: 4rem;
+  font-size: 40px;
   margin-top: -25px;
-  min-width: 440px;
+  margin-bottom: -20px;
+  min-width: 328px;
 }
 
 .headerSvgWrapper {
@@ -116,6 +120,7 @@ body {
   display: flex;
   display: inline-block;
   background-color: none;
+  margin-bottom: 10px;
 }
 
 #headerSvg {
@@ -332,6 +337,36 @@ body {
 svg text {
   font-size: 5px;
   fill: white;
+}
+
+@media only screen and (min-width: 480px) {
+  .headerTitle {
+    font-size: 60px;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .headerTitle {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .headerTitle {
+    font-size: 80px;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  #introWrapper,
+  #inputBoxWrapper {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    top: 30px;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
 }
 
 .lds-roller {

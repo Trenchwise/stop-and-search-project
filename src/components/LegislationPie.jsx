@@ -48,10 +48,10 @@ const LegislationPie = (props) => {
         />
         <div>
           <h2 className="pieText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            In London between January 2023 and June 2023 the top reasons to
+            conduct a stop and search controlled substances, stolen goods,
+            articles for use in theft and offensive weapons. Stop are also more
+            likely to occur between 12- 3am and in spring and summer.
           </h2>
         </div>
       </div>

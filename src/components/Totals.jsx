@@ -51,10 +51,7 @@ const Totals = (props) => {
           />
           <div id="crimeTotalsTextWrapper">
             <h2 id="totalsPieChartText">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              Crimes that have occurred at your specified location
             </h2>
           </div>
         </div>

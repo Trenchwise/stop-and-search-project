@@ -20,7 +20,7 @@ const EthnicityPie = (props) => {
 
   return (
     <div className="EthnicityPieWrapper">
-      <h2 className="titles">Legislation used to conduct Stop and Search</h2>
+      <h2 className="titles">Ethnicity</h2>
       <div className="innerEthnicityPieWrapper">
         <PieChart
           labelPosition={100 - 30}
