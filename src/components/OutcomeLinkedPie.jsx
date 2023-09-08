@@ -34,7 +34,7 @@ const OutcomeLinkedPie = (props) => {
             fill: "#ffffff", // colour of label text
             opacity: 0.85,
             pointerEvents: "none",
-            fontSize: "px", // label font size
+            fontSize: "10px", // label font size
           }}
           radius={pieChartDefaultProps.radius - 7}
           center={[50, 50]}
@@ -43,13 +43,13 @@ const OutcomeLinkedPie = (props) => {
           label={({ dataEntry }) => {
             return dataEntry.title + " " + dataEntry.value;
           }}
-          background="#1b2d48" // changes background colour
+          // background="#1b2d48" // changes background colour
         />
         <div id="OutcomeLinkedTextWrapper">
           <h2 className="pieText">
             In London between 2023 and June 2023, 65% of stop and searches led
             to no further action. Over half of reasons used to make stop and
-            searched were not found.
+            searches did not come to pass.
           </h2>
         </div>
       </div>

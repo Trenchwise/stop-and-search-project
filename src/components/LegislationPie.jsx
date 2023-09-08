@@ -26,7 +26,7 @@ const LegislationPie = (props) => {
           style={{
             fontFamily:
               '"Urbanist", -apple-system, Helvetica, Arial, sans-serif',
-            fontSize: "5px",
+            fontSize: "8px",
           }}
           labelStyle={{
             fill: "#fff", // colour of label text
@@ -44,14 +44,15 @@ const LegislationPie = (props) => {
           label={({ dataEntry }) => {
             return dataEntry.title + " " + dataEntry.value;
           }}
-          background="#1b2d48" // changes background colour
+          // background="#1b2d48" // changes background colour
         />
         <div>
           <h2 className="pieText">
             In London between January 2023 and June 2023 the top reasons to
-            conduct a stop and search controlled substances, stolen goods,
-            articles for use in theft and offensive weapons. Stop are also more
-            likely to occur between 12- 3am and in spring and summer.
+            conduct a stop and search include: controlled substances, stolen
+            goods, articles for use in theft and offensive weapons. Stops are
+            also more likely to occur between 12am - 3am and in spring and
+            summer.
           </h2>
         </div>
       </div>

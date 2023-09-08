@@ -9,6 +9,18 @@
   margin-bottom: 90px;
 }
 
+p {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
 body {
   background-color: #fcf1eb;
   /* background: linear-gradient(
@@ -33,9 +45,10 @@ body {
 
 .globalCard {
   /* background-color: #fefefe; white background colour */
-  background-color: #1b2d48;
-
+  /* background-color: #1b2d48; */
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border-color: #0e1624;
   font-family: "Urbanist";
 }
 
@@ -44,6 +57,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #f2bd9f;
+  font-size: 25px;
 
   /* color: #0c0c0d; black option */
   text-align: center;
@@ -63,7 +77,7 @@ body {
   display: flex;
   font-weight: 700px;
   max-width: 400px;
-  font-size: 15px;
+  font-size: 18px;
   margin-left: 20px;
 }
 
@@ -139,7 +153,7 @@ body {
   border: solid;
   padding: 20px;
   border-radius: 20px;
-  border-color: #f0f0f0;
+  border-color: #0e1624;
 }
 
 .introIcon {
@@ -162,21 +176,22 @@ body {
   border: solid;
   padding: 20px;
   border-radius: 10px;
-  border-color: #fefefe;
-  /* color: #0c0c0d;
-  background-color: #fefefe; */
+  border-color: #0e1624;
   color: #f2bd9f;
-  background-color: #1b2d48;
-
-  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
+  box-shadow: 0px 56px 72px -30px rgba(50, 55, 63, 0.66);
+  /* box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25); */
+  /* background-color: #1b2d48; */
   font-family: "Urbanist";
 }
 
 .crime,
 .stopItemWrapper {
-  background-color: #1b2d48;
-  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
-  font-family: "Lato", sans-serif;
+  border-color: #0e1624;
+  color: #f2bd9f;
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
+  box-shadow: 0px 56px 72px -30px rgba(50, 55, 63, 0.66);
+  font-family: "urbanist", sans-serif;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -184,7 +199,7 @@ body {
   border: solid;
   padding: 20px;
   border-radius: 10px;
-  border-color: #f0f0f0;
+  border-color: #0e1624;
 }
 
 .crimes {
@@ -192,6 +207,7 @@ body {
   align-items: stretch;
   flex-direction: column;
   justify-content: space-evenly;
+  border-color: #0e1624;
 }
 
 /* not needed anymore */
@@ -224,9 +240,9 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: #f0f0f0;
-  background-color: #1b2d48;
-  /* background-color: #fefefe; */
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border-color: #0e1624;
   font-family: "urbanist";
 }
 
@@ -243,9 +259,10 @@ body {
   padding: 20px;
   border-radius: 10px;
   border-color: #f0f0f0;
-  background-color: #1b2d48;
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
-  font-family: "Lato", sans-serif;
+  border-color: #0e1624;
+  font-family: "urbanist", sans-serif;
 }
 
 #totalsPiechart {
@@ -258,7 +275,7 @@ body {
   display: flex;
   font-weight: 700px;
   max-width: 400px;
-  font-size: 15px;
+  font-size: 18px;
   margin-left: 20px;
 }
 
@@ -277,7 +294,9 @@ body {
   border: solid;
   padding: 20px;
   border-radius: 20px;
-  border-color: #f0f0f0;
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
+  box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border-color: #0e1624;
   background-color: #1b2d48;
 
   /* background-color: #fefefe; white/light colour background*/
@@ -295,7 +314,8 @@ body {
   /* padding-right: 400px; */
   font-size: 18px;
   max-width: 480px;
-  background-color: #1b2d48;
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
+  /* background-color: #1b2d48; */
   font-family: "Urbanist";
   font-weight: bold;
   color: #f2bd9f;
@@ -303,13 +323,15 @@ body {
 
 ::placeholder {
   color: #f2bd9f;
-  background-color: #1b2d48;
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
   padding-left: 10px;
 }
 
 /* textarea {
-  background-color: #1b2d48; did not work to change placeholder text
-} */
+  color: red;
+  /* background-color: #1b2d48;
+   did not work to change placeholder text */
+/* } */
 
 .EthnicityPieWrapper {
   margin: 20px;
@@ -319,10 +341,9 @@ body {
   border: solid;
   padding: 20px;
   border-radius: 10px;
-  border-color: #f0f0f0;
-  background-color: #1b2d48;
-  /* background-color: #fefefe; */
+  background: linear-gradient(to right bottom, #1b2d48, #0e1624);
   box-shadow: 9px 7px 40px -6px rgba(0, 0, 0, 0.25);
+  border-color: #0e1624;
   font-family: "urbanist";
 }
 

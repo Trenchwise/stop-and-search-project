@@ -30,7 +30,7 @@ const EthnicityPie = (props) => {
             fontSize: "2px",
           }}
           labelStyle={{
-            fill: "#888", // colour of label text
+            fill: "#fefefe", // colour of label text
             opacity: 0.85,
             pointerEvents: "none",
             fontSize: "px", // label font size
@@ -45,7 +45,7 @@ const EthnicityPie = (props) => {
           label={({ dataEntry }) => {
             return dataEntry.title + " " + dataEntry.value;
           }}
-          background="#1b2d48" // changes background colour
+          // background="#1b2d48" // changes background colour
         />
         <div id="EthnicityPieWrapper">
           <h2 className="pieText">

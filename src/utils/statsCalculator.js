@@ -61,7 +61,7 @@ export const calcOutcomes = (stopsData) => {
   //in the structure that the graph requires
   return [
     { title: "Yes", value: totalTrue, color: "#bd6aab" },
-    { title: "No  👀", value: stopsData.length - totalTrue, color: "#ffc900" },
+    { title: "No", value: stopsData.length - totalTrue, color: "#ffc900" },
   ];
 };
 
