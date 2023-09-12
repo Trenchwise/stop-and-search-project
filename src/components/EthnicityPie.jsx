@@ -49,10 +49,10 @@ const EthnicityPie = (props) => {
         />
         <div id="EthnicityPieWrapper">
           <h2 className="pieText">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            In London between 2023 and June 2023 black and black British
+            individuals accounted for 60% of all individuals stoped in that time
+            frame. According to the 2011 census. Black and black British
+            individuals are 2.4% of the population in London.
           </h2>
         </div>
       </div>
